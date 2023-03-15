@@ -6,55 +6,58 @@ import {
   Route,
 } from "react-router-dom";
 
-//////////////////////////////////////////////////////////////////////
+import { routes4 } from './routes';
+
+////////////////////////////////////////////////////////////////////////
 // 方法一: 直接在 App.tsx 中定義路徑
-// import { Home } from './pages/Home';
-// import { NotFoundPage } from './pages/Error';
-// import { About } from './pages/About';
+import { Home } from './pages/Home';
+import { NotFoundPage } from './pages/Error';
+import { About } from './pages/About';
 
-// function App() {
-//   return (
-//     <div className="App">
-//       <Router basename="/React-Router-Example-01">
-//         <Routes>
-//           <Route path="/" element={<Home />} />
-//           <Route path="*" element={<NotFoundPage />}></Route>
-//         </Routes>
-//       </Router>
-//     </div>
-//   );
-// }
+export function App() {
+  return (
+    <div className="App">
+      <Router basename="/React-Router-Example-01">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="*" element={<NotFoundPage />}></Route>
+        </Routes>
+      </Router>
+    </div>
+  );
+}
 // export default App;
-// //////////////////////////////////////////////////////////////////////
-// // 方法二: 使用陣列的方式來定義路徑
-// const routes = [
-//   {
-//     path: '/',
-//     element: <Home />
-//   },
-//   {
-//     path: '/about',
-//     element: <About />
-//   },
-//   {
-//     path: '*',
-//     element: <NotFoundPage />
-//   }
-// ];
+//////////////////////////////////////////////////////////////////////
+// 方法二: 使用陣列的方式來定義路徑
+const routes = [
+  {
+    path: '/',
+    element: <Home />
+  },
+  {
+    path: '/about',
+    element: <About />
+  },
+  {
+    path: '*',
+    element: <NotFoundPage />
+  }
+];
 
-// export function AppVersion2() {
-//   return (
-//     <div className="App">
-//       <Router basename="/React-Router-Example-01">
-//         <Routes>
-//           {routes.map((route, index) => (
-//             <Route key={index} path={route.path} element={route.element} />
-//           ))}
-//         </Routes>
-//       </Router>
-//     </div>
-//   )
-// }
+export function AppVersion2() {
+  return (
+    <div className="App">
+      <Router basename="/React-Router-Example-01">
+        <Routes>
+          {routes.map((route, index) => (
+            <Route key={index} path={route.path} element={route.element} />
+          ))}
+        </Routes>
+      </Router>
+    </div>
+  )
+}
 
 //////////////////////////////////////////////////////////////////////
 // 方法三: 使用陣列的方式來定義路徑，並且使用 React.lazy() 來做 lazy loading(延遲載入) 
@@ -95,14 +98,16 @@ export function AppVersion3() {
 }
 
 //////////////////////////////////////////////////////////////////////
-// 方法四：使用統一的tsx檔案來定義路徑
+// 方法四：使用統一的tsx檔案來定義路徑 (集中式路由設定管理)
 
 export function AppVersion4() {
   return (
     <div className="App">
       <Router basename="/React-Router-Example-01">
         <Routes>
-        
+          {routes4.map((route, index) => (
+            <Route key={index} path={route.path} element={route.element} />
+          ))}
         </Routes>
       </Router>
     </div>
