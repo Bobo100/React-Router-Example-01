@@ -17,7 +17,7 @@ import { About } from './pages/About';
 export function App() {
   return (
     <div className="App">
-      <Router basename="/React-Router-Example-01">
+      <Router basename="/">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
@@ -48,7 +48,7 @@ const routes = [
 export function AppVersion2() {
   return (
     <div className="App">
-      <Router basename="/React-Router-Example-01">
+      <Router basename="/">
         <Routes>
           {routes.map((route, index) => (
             <Route key={index} path={route.path} element={route.element} />
@@ -86,7 +86,7 @@ const routes3 = [
 export function AppVersion3() {
   return (
     <div className="App">
-      <Router basename="/React-Router-Example-01">
+      <Router basename="/">
         <Routes>
           {routes3.map((route, index) => (
             <Route key={index} path={route.path} element={route.element} />
@@ -103,7 +103,7 @@ export function AppVersion3() {
 export function AppVersion4() {
   return (
     <div className="App">
-      <Router basename="/React-Router-Example-01">
+      <Router basename="/">
         <Routes>
           {routes4.map((route, index) => (
             <Route key={index} path={route.path} element={route.element} />
