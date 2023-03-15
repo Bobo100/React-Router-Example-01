@@ -1,3 +1,4 @@
-# cra-template-boboReactTypeScript
+# React-Router-Example-01
 
-存放個人的基礎設定檔案 (測試版)
+範例 01 
+你可以在src/App.tsx中 看到使用React-Router的各種方式
